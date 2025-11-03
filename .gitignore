@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.env
+.venv
+venv/
+ENV/
+env/
+
+
+
+# Logs
+*.log
+
+# Secrets
+.env
+.env.*
+
+# Migrations
+migrations/
