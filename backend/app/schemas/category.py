@@ -7,8 +7,17 @@ class CategoryBase(BaseModel):
 class CategoryCreate(CategoryBase):
     pass
 
+class CategoryUpdate(CategoryBase):
+    pass
+
 class CategoryOut(CategoryBase):
     id: int
 
     class Config:
         orm_mode = True
+        
+class CategoryResponse(CategoryBase):
+    id: int
+
+    class Config:
+        from_attributes = True
