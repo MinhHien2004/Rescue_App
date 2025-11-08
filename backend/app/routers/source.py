@@ -27,3 +27,9 @@ def delete_source(source_id: int, db: Session = Depends(get_db)):
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
     return source
+@router.put("/{source_id}", response_model=SourceOut)
+def update_source(source_id: int, source_in: SourceCreate, db: Session = Depends(get_db)):
+    source = SourceService.update(db, source_id, source_in)
+    if not source:
+        raise HTTPException(status_code=404, detail="Source not found")
+    return source

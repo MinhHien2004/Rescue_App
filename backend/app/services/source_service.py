@@ -26,3 +26,12 @@ class SourceService:
             db.delete(source)
             db.commit()
         return source
+    @staticmethod
+    def update(db: Session, source_id: int, source_in: SourceCreate):
+        source = db.query(Source).filter(Source.id == source_id).first()
+        if source:
+            for key, value in source_in.dict().items():
+                setattr(source, key, value)
+            db.commit()
+            db.refresh(source)
+        return source

@@ -22,6 +22,8 @@ class RescueRequestBase(BaseModel):
 class RescueRequestCreate(RescueRequestBase):
     pass
 
+class RescueRequestUpdate(RescueRequestBase):
+    pass
 class RescueRequestOut(RescueRequestBase):
     id: int
 
